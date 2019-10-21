@@ -34,7 +34,9 @@ body {
     font-size: 1.7rem;
   }
   li {
-    padding: 1vh;
+    line-height: 2rem;
+    letter-spacing: 0.1rem;
+    padding: 3vh;
   }
 }
 
