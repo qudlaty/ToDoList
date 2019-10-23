@@ -1,3 +1,4 @@
+
 html, body {
   width:100%;
   height: 100%;
@@ -17,29 +18,6 @@ body {
   background: linear-gradient(to top, #928DAB, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-@media (min-width: 1081px) {
-  #app-wrapper {
-    max-width: 60%;
-    margin: 5rem auto;
-    background-color: #f7f7f7;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-  }
-} 
-@media (max-width: 1080px) {
-  #app-wrapper {
-    max-width: 90%;
-    margin: 1rem auto;
-    background-color: #f7f7f7;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-    font-size: 1.7rem;
-  }
-  li {
-    line-height: 2rem;
-    letter-spacing: 0.1rem;
-    padding: 3vh;
-  }
-}
-
 h1 {
   background-color: #2980b9;
   color: white;
@@ -48,7 +26,27 @@ h1 {
   text-transform: uppercase;
   font-size: 1.8rem;
   font-weight: normal;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+}
+
+li:nth-child(2n) {
+   background-color: #f7f7f7;
+}
+
+li span {
+  background-color: crimson;
+  height: 2rem;
+  width: 0rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  color: white;
+  transition: 0.3s linear;
+  opacity: 0;
+}
+
+li:hover span {
+  width: 2rem;
+  opacity: 1.0;
 }
 
 ul {
@@ -57,26 +55,18 @@ ul {
   padding: 0;
 }
 
-li{
-  height: 2rem;
-  background-color: #FFF;
-  line-height: 2rem;
-  color: #666;
-}
-
-li:nth-child(2n){
-   background-color: #f7f7f7;
-}
-
-li:hover span{
-  width: 2rem;
-  opacity: 1.0;
-}
+ li {
+   height: auto;
+   background-color: #FFF;
+   color: #666;
+   display: flex;
+   align-items: center;
+   overflow: hidden;
+  }
 
 input {
   background-color: #f7f7f7;
-  font-size: 1.4rem;
-  padding: 0;
+  font-size: 1.8rem;
   width: 100%;
   padding: 0.5rem 0.5rem 0.5rem 0.8rem;
   box-sizing: border-box;
@@ -90,18 +80,6 @@ input:focus{
   outline: none;
 } 
 
-li span {
-  background-color: crimson;
-  height: 2rem;
-  width: 0rem;
-  margin-right: 0.5rem;
-  text-align: center;
-  color: white;
-  display: inline-block;
-  transition: 0.3s linear;
-  opacity: 0;
-}
-
 .completed {
   color: gray;
   text-decoration: line-through; 
@@ -109,4 +87,31 @@ li span {
 
 .fa-plus{
   float: right;
+}
+
+
+@media (min-width: 1080px) {
+  #app-wrapper {
+    max-width: 70%;
+    margin: 4rem auto;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    font-size: 1.8rem;
+  }
+  li {
+    padding: 1vh 5px;
+  }
+} 
+
+@media (max-width: 1079px) {
+  #app-wrapper {
+    max-width: 90%;
+    margin: 1rem auto;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    font-size: 1.8rem;
+  }
+  li {
+    padding: 3vh 3vh 3vh 5px;
+  }
 }
