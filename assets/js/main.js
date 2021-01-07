@@ -10,11 +10,11 @@ $("ul").on("click", "li", function(){
 $("ul").on("click","span", function(e){
 					
   $(this).parent().fadeOut(600,function(){
-		
-			console.log(this.textContent ,  'del SPAN TXT');
-			console.log(window.localStotrage, 'storage before del')//undef for sme reason
-			window.localStotrage.removeItem('task');
-		
+				
+		console.log(this.textContent ,  'del SPAN TXT');
+		console.log(window.localStorage, 'storage before del')
+		window.localStorage.removeItem('task');
+		console.log(window.localStorage, 'storage after del')
     $(this).remove();
 
   });
@@ -29,7 +29,7 @@ $("input[type='text']").keydown(function(e){
     $(this).val('');
     $("ul").append('<li><span><i class="far fa-times-circle"></i></span> ' + taskTxt + '</li>'); 
 		
-		window.localStorage.setItem('task',taskTxt);
+		window.localStorage.setItem('task', taskTxt);
 		console.log(window.localStorage, 'added');
 		
   }
