@@ -1,5 +1,9 @@
-//Check off tasks
 
+var existing = localStorage.getItem('listItems');
+console.log( existing);
+
+
+//Check off tasks
 $("ul").on("click", "li", function(){
   $(this).toggleClass("completed");
   console.log('clicked on li');
@@ -11,11 +15,7 @@ $("ul").on("click","span", function(e){
 					
   $(this).parent().fadeOut(600,function(){
 				
-		console.log(this.textContent ,  'del SPAN TXT');
-		console.log(window.localStorage, 'storage before del')
-		window.localStorage.removeItem('task');
-		console.log(window.localStorage, 'storage after del')
-    $(this).remove();
+		localStorage.removeItem('listItems');
 
   });
   e.stopPropagation();
@@ -28,14 +28,17 @@ $("input[type='text']").keydown(function(e){
     var taskTxt = $(this).val();
     $(this).val('');
     $("ul").append('<li><span><i class="far fa-times-circle"></i></span> ' + taskTxt + '</li>'); 
+		if(!existing){existing = []};
+
+ 		existing.push(taskTxt);
+		localStorage.setItem('listItems', existing);
 		
-		window.localStorage.setItem('task', taskTxt);
-		console.log(window.localStorage, 'added');
+		console.log(window.localStorage, existing);
 		
   }
 });
 
-console.log(window.localStorage, 'local storage content')
+console.log('local storage content', window.localStorage, existing)
 
 $("h1 span").click(function(){
   $("input[type='text']").fadeToggle();
